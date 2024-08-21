@@ -1,0 +1,55 @@
+<%- include('../partials/header') %>
+<body>
+  <% if (messages.error) { %>
+    <div style="color: red;"><%= messages.error %></div>
+  <% } %>
+  <% if (messages.success) { %>
+    <div style="color: green;"><%= messages.success %></div>
+  <% } %>
+
+  <section id="register-layout" class="container">
+    <div class="row">
+      <div class="col-12 text-center mb-4">
+        <p class="fs-4"> <span class="brand-orange">Upscaler</span></p>
+        <h2>Register your business</h2>
+        <p class="supporting-text">Welcome! Please enter your business details</p>
+      </div>
+      <div class="col-12">
+        <form action="/business/register" method="POST">
+          <div class="col-12 mb-3">
+            <label for="name" class="form-label">Business Name</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+          </div>
+          <div class="col-12 mb-3">
+            <label for="contact_email" class="form-label">Contact Email</label>
+            <input type="email" class="form-control" id="contact_email" name="contact_email" required>
+          </div>
+          <div class="col-12 mb-3">
+            <label for="contact_phone" class="form-label">Contact Phone</label>
+            <input type="tel" class="form-control" id="contact_phone" name="contact_phone">
+          </div>
+          <div class="col-12 mb-3">
+            <label for="website" class="form-label">Website</label>
+            <input type="url" class="form-control" id="website" name="website">
+          </div>
+          <div class="col-12 mb-3">
+            <label for="email" class="form-label">Admin Email</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+          </div>
+          <div class="col-12 mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" name="password" required>
+          </div>
+          <div class="col-12 mb-4">
+            <button class="btn-primary w-100" type="submit">Register Business</button>
+          </div>
+          <div class="col-12 text-center">
+            <p class="font-14">Already have an account? <a href="/login">Log in</a></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+  <script src="/js/functions.js"></script>
+</body>
+</html>
